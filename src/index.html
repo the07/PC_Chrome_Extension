@@ -7,9 +7,21 @@
       <h1>PeopleChain Crypto Extension</h1>
       <button id="generateKey">Generate Keys</button>
       <div>
-        <p>Your Public Key</p>
-        <p><span id="publicKey"></span></p>
+        <p>Your Public Key</p><br>
+        <p><span id="publicKey"></span></p><br>
+        <p>Your Private Key</p><br>
+        <input type="text" id="privateKey" readonly><br>
       </div>
+      <h5>Load Key from Secret Key</h5>
+      <input type="text" id="loadKeyPairPrivate">
+      <button id="loadKeyPair">Regenerate Keys</button><br>
+      <br>
+      <h5> Copy keys </h5>
+      <h6> Copy and save the keys in private lcoation.</h6>
+      <button id="copyKeyPair">Copy Keys</button><br>
+      <h5> Clear Keys</h5>
+      <h6> Clear the keys from storage </h6>
+      <button id="clearKeys">Clear Keys</button>
     </body>
     <script src="javascript/nacl.js">
     </script>
