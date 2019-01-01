@@ -1,16 +1,29 @@
   <html>
     <head>
       <style>
-        button {
-          height: 30px;
-          width: 30px;
-          outline: none;
-        }
       </style>
     </head>  
     <body>
       <h1>PeopleChain Crypto Extension</h1>
-      <button id="changeColor"></button>
+      <button id="generateKey">Generate Keys</button>
+      <div>
+        <p>Your Public Key</p>
+        <p><span id="publicKey"></span></p>
+      </div>
     </body>
+    <script src="javascript/nacl.js">
+    </script>
+    <script src="javascript/nacl-util.js">
+    </script>
+    <script src="javascript/ed2curve.js">
+    </script>
+    <script src="javascript/fast-memoize.js">
+    </script>
+    <script src="javascript/crypto.js">
+    </script>
+    <script src="javascript/sha256.js">
+    </script>
+    <script src="javascript/aes.js">
+    </script>
     <script src="javascript/popup.js"></script>
   </html>

@@ -2,17 +2,30 @@
     "name": "PeopleChain Crypto Extension",
     "description": "Extension to generate and store cryptography key pairs and use them to encrypt/decrypt and sign data.",
     "version": "0.0.1",
+    "externally_connectable": {
+        "matches": [
+            "*://app.peoplechain.test/*"
+        ],
+        "accepts_tls_channel_id": false
+    },
     "background": {
-        "scripts": ["src/javascript/index.js"],
+        "scripts": [
+            "src/javascript/nacl.js",
+            "src/javascript/nacl-util.js",
+            "src/javascript/ed2curve.js",
+            "src/javascript/fast-memoize.js",
+            "src/javascript/crypto.js",
+            "src/javascript/sha256.js",
+            "src/javascript/aes.js",
+            "src/javascript/index.js"
+        ],
         "persistent": false
     },
     "permissions": [
-        "activeTab", 
-        "declarativeContent", 
-        "storage",
+        "storage"
     ],
     "manifest_version": 2,
-    "page_action": {
+    "browser_action": {
         "default_popup": "src/index.html",
         "default_icon": {
             "16": "src/images/get_started16.png",

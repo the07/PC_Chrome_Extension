@@ -23,7 +23,7 @@ function fromSecretKey (secretKey) {
     }
 }
 
-function encrypt (data, theirPublicKey, mySecretKey) {
+function encryptPublic (data, theirPublicKey, mySecretKey) {
     data = nacl.util.decodeUTF8(data)
     theirPublicKey = convert.publicKey(nacl.util.decodeBase64(theirPublicKey))
     mySecretKey = convert.secretKey(nacl.util.decodeBase64(mySecretKey))
@@ -38,7 +38,7 @@ function encrypt (data, theirPublicKey, mySecretKey) {
     }
 }
 
-function decrypt (data, nonce, theirPublicKey, mySecretKey) {
+function decryptPrivate (data, nonce, theirPublicKey, mySecretKey) {
     data = nacl.util.decodeBase64(data)
     nonce = nacl.util.decodeBase64(nonce)
     theirPublicKey = convert.publicKey(nacl.util.decodeBase64(theirPublicKey))
@@ -53,7 +53,7 @@ function decrypt (data, nonce, theirPublicKey, mySecretKey) {
     return nacl.util.encodeUTF8(data)
 }
 
-function sign (data, mySecretKey) {
+function signPrivate (data, mySecretKey) {
     data = nacl.util.decodeUTF8(data)
     mySecretKey = nacl.util.decodeBase64(mySecretKey)
 
@@ -62,7 +62,7 @@ function sign (data, mySecretKey) {
     return nacl.util.encodeBase64(data)
 }
 
-function verify (data, signature, theirPublicKey) {
+function verifyPublic (data, signature, theirPublicKey) {
     data = nacl.util.decodeUTF8(data)
     signature = nacl.util.decodeBase64(signature)
     theirPublicKey = nacl.util.decodeBase64(theirPublicKey)
