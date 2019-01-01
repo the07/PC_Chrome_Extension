@@ -29,6 +29,7 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 
 chrome.runtime.onMessageExternal.addListener (function (request, sender, sendResonse) {
     var response = {}
+    
     if (request.method == "getPublicKey") {
         if (keyStorage.public) {
             response.message = "Success"
@@ -38,7 +39,7 @@ chrome.runtime.onMessageExternal.addListener (function (request, sender, sendRes
         }
     }
 
-    if (request.method == "encryptRecord") {
+    else if (request.method == "encryptRecord") {
          var aesKey = generateId(20)
          // 2 things to be encrypted - File and Private part
          response.file = CryptoJS.AES.encrypt(request.file, aesKey).toString()
