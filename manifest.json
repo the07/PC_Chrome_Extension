@@ -17,6 +17,7 @@
             "src/javascript/crypto.js",
             "src/javascript/sha256.js",
             "src/javascript/aes.js",
+            "src/javascript/sweetalert.min.js",
             "src/javascript/index.js"
         ],
         "persistent": false
@@ -38,8 +39,8 @@
     "commands": {
         "_execute_browser_action": {
             "suggested_key": {
-                "default": "Ctrl+Shift+P",
-                "mac": "MacCtrl+Shift+P"
+                "default": "Ctrl+Shift+L",
+                "mac": "MacCtrl+Shift+L"
             },
             "description": "Opens PC Extension index.html"
         }
